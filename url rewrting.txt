@@ -1,0 +1,18 @@
+######################################
+# URL Rewriting ######################
+######################################
+
+<IfModule mod_rewrite.c>
+Options -MultiViews
+Options +FollowSymLinks
+
+RewriteEngine On
+
+# RewriteBase /
+RewriteBase /projects/sitefolder/
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*[^/])/?$ $1.php [L]
+
+</IfModule>

@@ -1,0 +1,5 @@
+https://serverfault.com/questions/297420/apache-mod-rewrite-remove-extension-add-trailing-slash-preserve-directory-stru
+
+http://www.kvcodes.com/2016/02/godaddy-remove-php-extension/
+
+http://php.net/manual/en/security.hiding.php

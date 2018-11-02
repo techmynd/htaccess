@@ -1,0 +1,43 @@
+######################################
+# SECURITY ###########################
+######################################
+
+## Disable Hotlinking of files/images
+## code with only allow sitename.com and google.com or localhost to use assets
+RewriteEngine on
+RewriteCond %{HTTP_REFERER} !^$
+RewriteCond %{HTTP_REFERER} !^http(s)?://(www\.)?sitename.com [NC]
+RewriteCond %{HTTP_REFERER} !^http(s)?://(www\.)?google.com [NC]
+RewriteCond %{HTTP_REFERER} !^http(s)?://(www\.)?yahoo.com [NC]
+RewriteCond %{HTTP_REFERER} !^http(s)?://(www\.)?bing.com [NC]
+RewriteCond %{HTTP_REFERER} !^http(s)?://(www\.)?facebook.com [NC]
+RewriteCond %{HTTP_REFERER} !^http(s)?://(www\.)?twitter.com [NC]
+RewriteCond %{HTTP_REFERER} !^http(s)?://(www\.)?linkedin.com [NC]
+RewriteCond %{HTTP_REFERER} !^http(s)?://(www\.)?localhost/projects/sitename [NC]
+RewriteRule \.(jpg|jpeg|png|gif|json|js)$ – [NC,F,L] 
+
+
+## Protect config.php
+<Files config.php>
+order allow,deny
+deny from all
+</Files>
+
+## secure .htaccess file
+<Files .htaccess>
+ order allow,deny
+ deny from all
+</Files>
+
+## secure .htaccess file
+<files ~ "^.*\.([Hh][Tt][Aa])">
+order allow,deny
+deny from all
+satisfy all
+</files>
+
+## No directory listing across domain
+Options -Indexes
+## Disallow hidden files
+RedirectMatch 403 /\..*$
+

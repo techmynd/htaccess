@@ -1,0 +1,14 @@
+######################################
+# ERROR PAGES ########################
+######################################
+
+# <IfModule mod_rewrite.c>
+RewriteEngine On
+Options +FollowSymLinks
+ErrorDocument 206 https://www.sitename.com
+ErrorDocument 400 https://www.sitename.com/404/
+ErrorDocument 408 https://www.sitename.com
+ErrorDocument 500 https://www.sitename.com
+# </IfModule>
+
+
